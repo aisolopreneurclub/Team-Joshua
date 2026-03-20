@@ -1,0 +1,463 @@
+{
+  "version": "2.0",
+  "lastUpdated": "2026-03-20T08:58:50.157Z",
+  "activeFeatures": [
+    "db",
+    "Joshua-Automation",
+    "domain",
+    "hr",
+    "calendar",
+    "kanban",
+    "validations",
+    "stores",
+    "(main)",
+    "dashboard",
+    "login",
+    "signup",
+    "layout",
+    "prisma"
+  ],
+  "primaryFeature": "db",
+  "features": {
+    "db": {
+      "phase": "do",
+      "phaseNumber": 3,
+      "matchRate": null,
+      "iterationCount": 0,
+      "requirements": [],
+      "documents": {},
+      "timestamps": {
+        "started": "2026-03-20T08:46:27.004Z",
+        "lastUpdated": "2026-03-20T08:46:27.004Z"
+      },
+      "lastFile": "/Users/tuemarz/Downloads/ASC/Joshua-Automation/src/infrastructure/db/prisma.ts"
+    },
+    "Joshua-Automation": {
+      "phase": "do",
+      "phaseNumber": 3,
+      "matchRate": null,
+      "iterationCount": 0,
+      "requirements": [],
+      "documents": {},
+      "timestamps": {
+        "started": "2026-03-20T08:46:30.068Z",
+        "lastUpdated": "2026-03-20T08:57:44.770Z"
+      },
+      "lastFile": "/Users/tuemarz/Downloads/ASC/Joshua-Automation/src/hooks/useSocket.ts"
+    },
+    "domain": {
+      "phase": "do",
+      "phaseNumber": 3,
+      "matchRate": null,
+      "iterationCount": 0,
+      "requirements": [],
+      "documents": {},
+      "timestamps": {
+        "started": "2026-03-20T08:46:56.392Z",
+        "lastUpdated": "2026-03-20T08:46:56.392Z"
+      },
+      "lastFile": "/Users/tuemarz/Downloads/ASC/Joshua-Automation/src/domain/common/types.ts"
+    },
+    "hr": {
+      "phase": "do",
+      "phaseNumber": 3,
+      "matchRate": null,
+      "iterationCount": 0,
+      "requirements": [],
+      "documents": {},
+      "timestamps": {
+        "started": "2026-03-20T08:47:01.346Z",
+        "lastUpdated": "2026-03-20T08:47:01.346Z"
+      },
+      "lastFile": "/Users/tuemarz/Downloads/ASC/Joshua-Automation/src/domain/hr/types.ts"
+    },
+    "calendar": {
+      "phase": "do",
+      "phaseNumber": 3,
+      "matchRate": null,
+      "iterationCount": 0,
+      "requirements": [],
+      "documents": {},
+      "timestamps": {
+        "started": "2026-03-20T08:47:05.134Z",
+        "lastUpdated": "2026-03-20T08:47:05.134Z"
+      },
+      "lastFile": "/Users/tuemarz/Downloads/ASC/Joshua-Automation/src/domain/calendar/types.ts"
+    },
+    "kanban": {
+      "phase": "do",
+      "phaseNumber": 3,
+      "matchRate": null,
+      "iterationCount": 0,
+      "requirements": [],
+      "documents": {},
+      "timestamps": {
+        "started": "2026-03-20T08:47:08.175Z",
+        "lastUpdated": "2026-03-20T08:47:08.175Z"
+      },
+      "lastFile": "/Users/tuemarz/Downloads/ASC/Joshua-Automation/src/domain/kanban/types.ts"
+    },
+    "validations": {
+      "phase": "do",
+      "phaseNumber": 3,
+      "matchRate": null,
+      "iterationCount": 0,
+      "requirements": [],
+      "documents": {},
+      "timestamps": {
+        "started": "2026-03-20T08:47:18.388Z",
+        "lastUpdated": "2026-03-20T08:47:23.211Z"
+      },
+      "lastFile": "/Users/tuemarz/Downloads/ASC/Joshua-Automation/src/lib/validations/leave.ts"
+    },
+    "stores": {
+      "phase": "do",
+      "phaseNumber": 3,
+      "matchRate": null,
+      "iterationCount": 0,
+      "requirements": [],
+      "documents": {},
+      "timestamps": {
+        "started": "2026-03-20T08:47:33.200Z",
+        "lastUpdated": "2026-03-20T08:47:38.163Z"
+      },
+      "lastFile": "/Users/tuemarz/Downloads/ASC/Joshua-Automation/src/stores/useNotificationStore.ts"
+    },
+    "(main)": {
+      "phase": "do",
+      "phaseNumber": 3,
+      "matchRate": null,
+      "iterationCount": 0,
+      "requirements": [],
+      "documents": {},
+      "timestamps": {
+        "started": "2026-03-20T08:48:01.247Z",
+        "lastUpdated": "2026-03-20T08:57:30.967Z"
+      },
+      "lastFile": "/Users/tuemarz/Downloads/ASC/Joshua-Automation/src/app/(main)/layout.tsx"
+    },
+    "dashboard": {
+      "phase": "do",
+      "phaseNumber": 3,
+      "matchRate": null,
+      "iterationCount": 0,
+      "requirements": [],
+      "documents": {},
+      "timestamps": {
+        "started": "2026-03-20T08:48:02.023Z",
+        "lastUpdated": "2026-03-20T08:48:02.023Z"
+      },
+      "lastFile": "/Users/tuemarz/Downloads/ASC/Joshua-Automation/src/app/(main)/dashboard/page.tsx"
+    },
+    "login": {
+      "phase": "do",
+      "phaseNumber": 3,
+      "matchRate": null,
+      "iterationCount": 0,
+      "requirements": [],
+      "documents": {},
+      "timestamps": {
+        "started": "2026-03-20T08:48:04.022Z",
+        "lastUpdated": "2026-03-20T08:58:50.157Z"
+      },
+      "lastFile": "/Users/tuemarz/Downloads/ASC/Joshua-Automation/src/app/(auth)/login/page.tsx"
+    },
+    "signup": {
+      "phase": "do",
+      "phaseNumber": 3,
+      "matchRate": null,
+      "iterationCount": 0,
+      "requirements": [],
+      "documents": {},
+      "timestamps": {
+        "started": "2026-03-20T08:56:01.669Z",
+        "lastUpdated": "2026-03-20T08:56:50.159Z"
+      },
+      "lastFile": "/Users/tuemarz/Downloads/ASC/Joshua-Automation/src/app/(auth)/signup/page.tsx"
+    },
+    "layout": {
+      "phase": "do",
+      "phaseNumber": 3,
+      "matchRate": null,
+      "iterationCount": 0,
+      "requirements": [],
+      "documents": {},
+      "timestamps": {
+        "started": "2026-03-20T08:57:05.297Z",
+        "lastUpdated": "2026-03-20T08:57:19.971Z"
+      },
+      "lastFile": "/Users/tuemarz/Downloads/ASC/Joshua-Automation/src/presentation/components/layout/AppLayout.tsx"
+    },
+    "prisma": {
+      "phase": "do",
+      "phaseNumber": 3,
+      "matchRate": null,
+      "iterationCount": 0,
+      "requirements": [],
+      "documents": {},
+      "timestamps": {
+        "started": "2026-03-20T08:58:03.317Z",
+        "lastUpdated": "2026-03-20T08:58:03.317Z"
+      },
+      "lastFile": "/Users/tuemarz/Downloads/ASC/Joshua-Automation/prisma/seed.ts"
+    }
+  },
+  "pipeline": {
+    "currentPhase": 1,
+    "level": "Dynamic",
+    "phaseHistory": []
+  },
+  "session": {
+    "startedAt": "2026-03-20T08:16:14.236Z",
+    "onboardingCompleted": false,
+    "lastActivity": "2026-03-20T08:58:50.157Z"
+  },
+  "history": [
+    {
+      "timestamp": "2026-03-20T08:46:27.004Z",
+      "feature": "db",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-03-20T08:46:30.068Z",
+      "feature": "Joshua-Automation",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-03-20T08:46:34.903Z",
+      "feature": "Joshua-Automation",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-03-20T08:46:35.616Z",
+      "feature": "Joshua-Automation",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-03-20T08:46:56.392Z",
+      "feature": "domain",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-03-20T08:47:01.346Z",
+      "feature": "hr",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-03-20T08:47:05.134Z",
+      "feature": "calendar",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-03-20T08:47:08.175Z",
+      "feature": "kanban",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-03-20T08:47:18.388Z",
+      "feature": "validations",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-03-20T08:47:20.045Z",
+      "feature": "validations",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-03-20T08:47:22.370Z",
+      "feature": "validations",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-03-20T08:47:23.211Z",
+      "feature": "validations",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-03-20T08:47:33.200Z",
+      "feature": "stores",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-03-20T08:47:35.485Z",
+      "feature": "stores",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-03-20T08:47:38.163Z",
+      "feature": "stores",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-03-20T08:47:47.919Z",
+      "feature": "Joshua-Automation",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-03-20T08:47:57.946Z",
+      "feature": "Joshua-Automation",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-03-20T08:48:01.247Z",
+      "feature": "(main)",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-03-20T08:48:02.023Z",
+      "feature": "dashboard",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-03-20T08:48:04.022Z",
+      "feature": "login",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-03-20T08:48:20.806Z",
+      "feature": "Joshua-Automation",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-03-20T08:55:56.427Z",
+      "feature": "Joshua-Automation",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-03-20T08:56:01.669Z",
+      "feature": "signup",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-03-20T08:56:04.772Z",
+      "feature": "Joshua-Automation",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-03-20T08:56:11.060Z",
+      "feature": "Joshua-Automation",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-03-20T08:56:14.998Z",
+      "feature": "Joshua-Automation",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-03-20T08:56:15.097Z",
+      "feature": "Joshua-Automation",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-03-20T08:56:26.280Z",
+      "feature": "Joshua-Automation",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-03-20T08:56:40.448Z",
+      "feature": "login",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-03-20T08:56:50.159Z",
+      "feature": "signup",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-03-20T08:57:05.297Z",
+      "feature": "layout",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-03-20T08:57:13.443Z",
+      "feature": "layout",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-03-20T08:57:18.260Z",
+      "feature": "layout",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-03-20T08:57:19.971Z",
+      "feature": "layout",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-03-20T08:57:30.967Z",
+      "feature": "(main)",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-03-20T08:57:39.790Z",
+      "feature": "Joshua-Automation",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-03-20T08:57:44.426Z",
+      "feature": "Joshua-Automation",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-03-20T08:57:44.770Z",
+      "feature": "Joshua-Automation",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-03-20T08:58:03.317Z",
+      "feature": "prisma",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-03-20T08:58:41.373Z",
+      "feature": "login",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-03-20T08:58:50.157Z",
+      "feature": "login",
+      "phase": "do",
+      "action": "updated"
+    }
+  ]
+}
