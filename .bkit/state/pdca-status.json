@@ -1,6 +1,6 @@
 {
   "version": "2.0",
-  "lastUpdated": "2026-03-20T08:58:50.157Z",
+  "lastUpdated": "2026-03-20T09:21:47.585Z",
   "activeFeatures": [
     "db",
     "Joshua-Automation",
@@ -15,7 +15,14 @@
     "login",
     "signup",
     "layout",
-    "prisma"
+    "prisma",
+    "employees",
+    "[id]",
+    "org-chart",
+    "attendance",
+    "leaves",
+    "[boardId]",
+    "settings"
   ],
   "primaryFeature": "db",
   "features": {
@@ -41,9 +48,9 @@
       "documents": {},
       "timestamps": {
         "started": "2026-03-20T08:46:30.068Z",
-        "lastUpdated": "2026-03-20T08:57:44.770Z"
+        "lastUpdated": "2026-03-20T09:04:56.027Z"
       },
-      "lastFile": "/Users/tuemarz/Downloads/ASC/Joshua-Automation/src/hooks/useSocket.ts"
+      "lastFile": "/Users/tuemarz/Downloads/ASC/Joshua-Automation/src/lib/api-client.ts"
     },
     "domain": {
       "phase": "do",
@@ -80,9 +87,9 @@
       "documents": {},
       "timestamps": {
         "started": "2026-03-20T08:47:05.134Z",
-        "lastUpdated": "2026-03-20T08:47:05.134Z"
+        "lastUpdated": "2026-03-20T09:20:20.542Z"
       },
-      "lastFile": "/Users/tuemarz/Downloads/ASC/Joshua-Automation/src/domain/calendar/types.ts"
+      "lastFile": "/Users/tuemarz/Downloads/ASC/Joshua-Automation/src/app/(main)/calendar/page.tsx"
     },
     "kanban": {
       "phase": "do",
@@ -93,9 +100,9 @@
       "documents": {},
       "timestamps": {
         "started": "2026-03-20T08:47:08.175Z",
-        "lastUpdated": "2026-03-20T08:47:08.175Z"
+        "lastUpdated": "2026-03-20T09:21:47.585Z"
       },
-      "lastFile": "/Users/tuemarz/Downloads/ASC/Joshua-Automation/src/domain/kanban/types.ts"
+      "lastFile": "/Users/tuemarz/Downloads/ASC/Joshua-Automation/src/app/(main)/kanban/page.tsx"
     },
     "validations": {
       "phase": "do",
@@ -145,7 +152,7 @@
       "documents": {},
       "timestamps": {
         "started": "2026-03-20T08:48:02.023Z",
-        "lastUpdated": "2026-03-20T08:48:02.023Z"
+        "lastUpdated": "2026-03-20T09:09:40.848Z"
       },
       "lastFile": "/Users/tuemarz/Downloads/ASC/Joshua-Automation/src/app/(main)/dashboard/page.tsx"
     },
@@ -158,7 +165,7 @@
       "documents": {},
       "timestamps": {
         "started": "2026-03-20T08:48:04.022Z",
-        "lastUpdated": "2026-03-20T08:58:50.157Z"
+        "lastUpdated": "2026-03-20T09:04:45.291Z"
       },
       "lastFile": "/Users/tuemarz/Downloads/ASC/Joshua-Automation/src/app/(auth)/login/page.tsx"
     },
@@ -184,9 +191,9 @@
       "documents": {},
       "timestamps": {
         "started": "2026-03-20T08:57:05.297Z",
-        "lastUpdated": "2026-03-20T08:57:19.971Z"
+        "lastUpdated": "2026-03-20T09:14:43.787Z"
       },
-      "lastFile": "/Users/tuemarz/Downloads/ASC/Joshua-Automation/src/presentation/components/layout/AppLayout.tsx"
+      "lastFile": "/Users/tuemarz/Downloads/ASC/Joshua-Automation/src/presentation/components/layout/Sidebar.tsx"
     },
     "prisma": {
       "phase": "do",
@@ -200,6 +207,97 @@
         "lastUpdated": "2026-03-20T08:58:03.317Z"
       },
       "lastFile": "/Users/tuemarz/Downloads/ASC/Joshua-Automation/prisma/seed.ts"
+    },
+    "employees": {
+      "phase": "do",
+      "phaseNumber": 3,
+      "matchRate": null,
+      "iterationCount": 0,
+      "requirements": [],
+      "documents": {},
+      "timestamps": {
+        "started": "2026-03-20T09:13:21.085Z",
+        "lastUpdated": "2026-03-20T09:13:21.085Z"
+      },
+      "lastFile": "/Users/tuemarz/Downloads/ASC/Joshua-Automation/src/app/(main)/hr/employees/page.tsx"
+    },
+    "[id]": {
+      "phase": "do",
+      "phaseNumber": 3,
+      "matchRate": null,
+      "iterationCount": 0,
+      "requirements": [],
+      "documents": {},
+      "timestamps": {
+        "started": "2026-03-20T09:13:24.705Z",
+        "lastUpdated": "2026-03-20T09:13:24.705Z"
+      },
+      "lastFile": "/Users/tuemarz/Downloads/ASC/Joshua-Automation/src/app/(main)/hr/employees/[id]/page.tsx"
+    },
+    "org-chart": {
+      "phase": "do",
+      "phaseNumber": 3,
+      "matchRate": null,
+      "iterationCount": 0,
+      "requirements": [],
+      "documents": {},
+      "timestamps": {
+        "started": "2026-03-20T09:13:28.748Z",
+        "lastUpdated": "2026-03-20T09:13:28.748Z"
+      },
+      "lastFile": "/Users/tuemarz/Downloads/ASC/Joshua-Automation/src/app/(main)/hr/org-chart/page.tsx"
+    },
+    "attendance": {
+      "phase": "do",
+      "phaseNumber": 3,
+      "matchRate": null,
+      "iterationCount": 0,
+      "requirements": [],
+      "documents": {},
+      "timestamps": {
+        "started": "2026-03-20T09:13:32.376Z",
+        "lastUpdated": "2026-03-20T09:13:32.376Z"
+      },
+      "lastFile": "/Users/tuemarz/Downloads/ASC/Joshua-Automation/src/app/(main)/hr/attendance/page.tsx"
+    },
+    "leaves": {
+      "phase": "do",
+      "phaseNumber": 3,
+      "matchRate": null,
+      "iterationCount": 0,
+      "requirements": [],
+      "documents": {},
+      "timestamps": {
+        "started": "2026-03-20T09:13:39.007Z",
+        "lastUpdated": "2026-03-20T09:13:39.007Z"
+      },
+      "lastFile": "/Users/tuemarz/Downloads/ASC/Joshua-Automation/src/app/(main)/hr/leaves/page.tsx"
+    },
+    "[boardId]": {
+      "phase": "do",
+      "phaseNumber": 3,
+      "matchRate": null,
+      "iterationCount": 0,
+      "requirements": [],
+      "documents": {},
+      "timestamps": {
+        "started": "2026-03-20T09:14:05.369Z",
+        "lastUpdated": "2026-03-20T09:20:23.533Z"
+      },
+      "lastFile": "/Users/tuemarz/Downloads/ASC/Joshua-Automation/src/app/(main)/kanban/[boardId]/page.tsx"
+    },
+    "settings": {
+      "phase": "do",
+      "phaseNumber": 3,
+      "matchRate": null,
+      "iterationCount": 0,
+      "requirements": [],
+      "documents": {},
+      "timestamps": {
+        "started": "2026-03-20T09:14:08.301Z",
+        "lastUpdated": "2026-03-20T09:14:08.301Z"
+      },
+      "lastFile": "/Users/tuemarz/Downloads/ASC/Joshua-Automation/src/app/(main)/settings/page.tsx"
     }
   },
   "pipeline": {
@@ -210,7 +308,7 @@
   "session": {
     "startedAt": "2026-03-20T08:16:14.236Z",
     "onboardingCompleted": false,
-    "lastActivity": "2026-03-20T08:58:50.157Z"
+    "lastActivity": "2026-03-20T09:21:47.585Z"
   },
   "history": [
     {
@@ -456,6 +554,180 @@
     {
       "timestamp": "2026-03-20T08:58:50.157Z",
       "feature": "login",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-03-20T09:04:45.291Z",
+      "feature": "login",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-03-20T09:04:56.027Z",
+      "feature": "Joshua-Automation",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-03-20T09:08:10.088Z",
+      "feature": "dashboard",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-03-20T09:08:25.215Z",
+      "feature": "dashboard",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-03-20T09:08:42.450Z",
+      "feature": "dashboard",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-03-20T09:09:00.244Z",
+      "feature": "dashboard",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-03-20T09:09:17.597Z",
+      "feature": "dashboard",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-03-20T09:09:40.848Z",
+      "feature": "dashboard",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-03-20T09:13:21.085Z",
+      "feature": "employees",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-03-20T09:13:24.705Z",
+      "feature": "[id]",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-03-20T09:13:28.748Z",
+      "feature": "org-chart",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-03-20T09:13:32.376Z",
+      "feature": "attendance",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-03-20T09:13:39.007Z",
+      "feature": "leaves",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-03-20T09:13:42.608Z",
+      "feature": "calendar",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-03-20T09:13:52.993Z",
+      "feature": "kanban",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-03-20T09:14:05.369Z",
+      "feature": "[boardId]",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-03-20T09:14:08.301Z",
+      "feature": "settings",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-03-20T09:14:19.206Z",
+      "feature": "layout",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-03-20T09:14:43.787Z",
+      "feature": "layout",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-03-20T09:19:00.752Z",
+      "feature": "calendar",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-03-20T09:19:17.621Z",
+      "feature": "calendar",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-03-20T09:19:25.709Z",
+      "feature": "calendar",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-03-20T09:19:50.937Z",
+      "feature": "kanban",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-03-20T09:19:58.461Z",
+      "feature": "kanban",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-03-20T09:20:11.086Z",
+      "feature": "kanban",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-03-20T09:20:20.542Z",
+      "feature": "calendar",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-03-20T09:20:23.533Z",
+      "feature": "[boardId]",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-03-20T09:21:38.860Z",
+      "feature": "kanban",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-03-20T09:21:47.585Z",
+      "feature": "kanban",
       "phase": "do",
       "action": "updated"
     }

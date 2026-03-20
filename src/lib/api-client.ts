@@ -13,6 +13,14 @@ function makeQueryClient() {
           return failureCount < 2
         },
       },
+      mutations: {
+        onError: (error) => {
+          const status = (error as { status?: number }).status
+          if (status === 401 && typeof window !== "undefined") {
+            window.location.href = "/login"
+          }
+        },
+      },
     },
   })
 }
