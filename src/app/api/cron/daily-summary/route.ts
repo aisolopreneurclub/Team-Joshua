@@ -44,13 +44,18 @@ export async function GET(request: NextRequest) {
         title: true,
         priority: true,
         dueDate: true,
-        assignee: { select: { name: true } },
+        assignee: { select: { user: { select: { name: true } } } },
         column: { select: { name: true } },
       },
       orderBy: { dueDate: "asc" },
     })
 
-    const success = await notifyDailySummary(tasks, events)
+    const mappedTasks = tasks.map((t) => ({
+      ...t,
+      assignee: t.assignee ? { name: t.assignee.user.name } : null,
+    }))
+
+    const success = await notifyDailySummary(mappedTasks, events)
 
     return NextResponse.json({
       ok: success,

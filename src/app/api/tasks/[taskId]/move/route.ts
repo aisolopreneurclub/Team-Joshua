@@ -27,7 +27,7 @@ export async function PATCH(
       where: { id: taskId },
       include: {
         column: { select: { name: true } },
-        assignee: { select: { name: true } },
+        assignee: { select: { user: { select: { name: true } } } },
       },
     })
 
@@ -54,7 +54,7 @@ export async function PATCH(
       },
       include: {
         column: { select: { name: true } },
-        assignee: { select: { id: true, name: true } },
+        assignee: { select: { user: { select: { name: true } } } },
       },
     })
 
@@ -65,7 +65,7 @@ export async function PATCH(
         title: updatedTask.title,
         priority: updatedTask.priority,
         dueDate: updatedTask.dueDate?.toISOString() ?? null,
-        assignee: updatedTask.assignee,
+        assignee: updatedTask.assignee ? { name: updatedTask.assignee.user.name } : null,
         fromColumn: fromColumnName,
         toColumn: updatedTask.column.name,
       },
