@@ -1,11 +1,16 @@
 "use client"
 
-import { useState, useCallback } from "react"
+import { useState, useCallback, useEffect } from "react"
 import FullCalendar from "@fullcalendar/react"
 import dayGridPlugin from "@fullcalendar/daygrid"
 import timeGridPlugin from "@fullcalendar/timegrid"
 import interactionPlugin from "@fullcalendar/interaction"
-import type { DateSelectArg, EventClickArg, EventInput } from "@fullcalendar/core"
+import type {
+  DateSelectArg,
+  EventClickArg,
+  EventInput,
+  DatesSetArg,
+} from "@fullcalendar/core"
 import {
   Dialog,
   DialogContent,
@@ -15,91 +20,65 @@ import {
 import { EventForm, type EventFormData } from "./EventForm"
 import { EventDetail } from "./EventDetail"
 
-const INITIAL_EVENTS: EventInput[] = [
-  {
-    id: "1",
-    title: "스탠드업 미팅",
-    start: todayAt(9, 0),
-    end: todayAt(9, 30),
-    backgroundColor: "#3b82f6",
-    borderColor: "#3b82f6",
-    extendedProps: { location: "회의실 A", description: "일일 스탠드업" },
-  },
-  {
-    id: "2",
-    title: "스프린트 리뷰",
-    start: todayAt(14, 0),
-    end: todayAt(15, 0),
-    backgroundColor: "#10b981",
-    borderColor: "#10b981",
-    extendedProps: { location: "회의실 B", description: "이번 주 스프린트 리뷰" },
-  },
-  {
-    id: "3",
-    title: "1:1 미팅",
-    start: todayAt(16, 0),
-    end: todayAt(16, 30),
-    backgroundColor: "#f59e0b",
-    borderColor: "#f59e0b",
-    extendedProps: { description: "민재 팀장과 1:1" },
-  },
-  {
-    id: "4",
-    title: "디자인 리뷰",
-    start: tomorrowAt(10, 0),
-    end: tomorrowAt(11, 0),
-    backgroundColor: "#8b5cf6",
-    borderColor: "#8b5cf6",
-    extendedProps: { location: "회의실 C", description: "UI/UX 디자인 리뷰" },
-  },
-  {
-    id: "5",
-    title: "팀 점심",
-    start: offsetDay(2, 12, 0),
-    end: offsetDay(2, 13, 0),
-    backgroundColor: "#ec4899",
-    borderColor: "#ec4899",
-    extendedProps: { description: "개발팀 회식" },
-  },
-  {
-    id: "6",
-    title: "배포 일정",
-    start: offsetDay(3, 9, 0),
-    end: offsetDay(3, 18, 0),
-    backgroundColor: "#ef4444",
-    borderColor: "#ef4444",
-    extendedProps: { description: "v1.0 프로덕션 배포" },
-  },
-]
-
-function todayAt(h: number, m: number) {
-  const d = new Date()
-  d.setHours(h, m, 0, 0)
-  return d.toISOString()
-}
-
-function tomorrowAt(h: number, m: number) {
-  const d = new Date()
-  d.setDate(d.getDate() + 1)
-  d.setHours(h, m, 0, 0)
-  return d.toISOString()
-}
-
-function offsetDay(offset: number, h: number, m: number) {
-  const d = new Date()
-  d.setDate(d.getDate() + offset)
-  d.setHours(h, m, 0, 0)
-  return d.toISOString()
-}
+const COLORS = ["#3b82f6", "#10b981", "#f59e0b", "#8b5cf6", "#ec4899", "#ef4444"]
 
 let eventId = 100
 
 export function CalendarView() {
-  const [events, setEvents] = useState<EventInput[]>(INITIAL_EVENTS)
+  const [events, setEvents] = useState<EventInput[]>([])
+  const [localEvents, setLocalEvents] = useState<EventInput[]>([])
   const [showCreateDialog, setShowCreateDialog] = useState(false)
   const [showDetailDialog, setShowDetailDialog] = useState(false)
   const [selectedDate, setSelectedDate] = useState<{ start: Date; end: Date } | null>(null)
   const [selectedEvent, setSelectedEvent] = useState<EventInput | null>(null)
+  const [dateRange, setDateRange] = useState<{ start: string; end: string } | null>(null)
+
+  // Google Calendar에서 일정 가져오기
+  useEffect(() => {
+    if (!dateRange) return
+
+    async function fetchEvents() {
+      try {
+        const params = new URLSearchParams({
+          timeMin: dateRange!.start,
+          timeMax: dateRange!.end,
+        })
+        const res = await fetch(`/api/calendar/events?${params}`)
+        if (!res.ok) return
+
+        const data = await res.json()
+        const googleEvents: EventInput[] = data.events.map(
+          (ev: { id: string; title: string; start: string; end: string; isAllDay: boolean; location?: string; description?: string; htmlLink?: string }, index: number) => ({
+            id: `google-${ev.id}`,
+            title: ev.title,
+            start: ev.start,
+            end: ev.end,
+            allDay: ev.isAllDay,
+            backgroundColor: COLORS[index % COLORS.length],
+            borderColor: COLORS[index % COLORS.length],
+            extendedProps: {
+              location: ev.location,
+              description: ev.description,
+              htmlLink: ev.htmlLink,
+              source: "google",
+            },
+          })
+        )
+        setEvents(googleEvents)
+      } catch {
+        // 실패 시 빈 배열 유지
+      }
+    }
+    fetchEvents()
+  }, [dateRange])
+
+  // FullCalendar 날짜 범위 변경 시
+  const handleDatesSet = useCallback((arg: DatesSetArg) => {
+    setDateRange({
+      start: arg.start.toISOString(),
+      end: arg.end.toISOString(),
+    })
+  }, [])
 
   const handleDateSelect = useCallback((selectInfo: DateSelectArg) => {
     setSelectedDate({ start: selectInfo.start, end: selectInfo.end })
@@ -109,6 +88,11 @@ export function CalendarView() {
 
   const handleEventClick = useCallback((clickInfo: EventClickArg) => {
     const ev = clickInfo.event
+    // Google 일정 클릭 시 Google Calendar로 이동
+    if (ev.extendedProps?.htmlLink) {
+      window.open(ev.extendedProps.htmlLink, "_blank")
+      return
+    }
     setSelectedEvent({
       id: ev.id,
       title: ev.title,
@@ -136,7 +120,7 @@ export function CalendarView() {
           location: data.location,
         },
       }
-      setEvents((prev) => [...prev, newEvent])
+      setLocalEvents((prev) => [...prev, newEvent])
       setShowCreateDialog(false)
     },
     []
@@ -144,11 +128,14 @@ export function CalendarView() {
 
   const handleDeleteEvent = useCallback(
     (id: string) => {
-      setEvents((prev) => prev.filter((e) => e.id !== id))
+      setLocalEvents((prev) => prev.filter((e) => e.id !== id))
       setShowDetailDialog(false)
     },
     []
   )
+
+  // Google 일정 + 로컬 일정 병합
+  const allEvents = [...events, ...localEvents]
 
   return (
     <>
@@ -167,9 +154,10 @@ export function CalendarView() {
             selectMirror
             dayMaxEvents={3}
             weekends
-            events={events}
+            events={allEvents}
             select={handleDateSelect}
             eventClick={handleEventClick}
+            datesSet={handleDatesSet}
             height="auto"
             buttonText={{
               today: "오늘",

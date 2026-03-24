@@ -15,6 +15,7 @@ declare module "next-auth" {
       role: Role
       employeeId: string | null
     }
+    accessToken?: string
   }
 
   interface User {
@@ -28,6 +29,8 @@ declare module "next-auth/jwt" {
     id: string
     role: Role
     employeeId: string | null
+    accessToken?: string
+    refreshToken?: string
   }
 }
 
@@ -76,16 +79,29 @@ export const authOptions: NextAuthOptions = {
           GoogleProvider({
             clientId: process.env.GOOGLE_CLIENT_ID,
             clientSecret: process.env.GOOGLE_CLIENT_SECRET,
+            allowDangerousEmailAccountLinking: true,
+            authorization: {
+              params: {
+                scope:
+                  "openid email profile https://www.googleapis.com/auth/calendar",
+                access_type: "offline",
+                prompt: "consent",
+              },
+            },
           }),
         ]
       : []),
   ],
   callbacks: {
-    async jwt({ token, user }) {
+    async jwt({ token, user, account }) {
       if (user) {
         token.id = user.id
         token.role = user.role
         token.employeeId = user.employeeId ?? null
+      }
+      if (account?.provider === "google") {
+        token.accessToken = account.access_token
+        token.refreshToken = account.refresh_token
       }
       return token
     },
@@ -93,6 +109,7 @@ export const authOptions: NextAuthOptions = {
       session.user.id = token.id
       session.user.role = token.role
       session.user.employeeId = token.employeeId
+      session.accessToken = token.accessToken
       return session
     },
   },

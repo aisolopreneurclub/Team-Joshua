@@ -21,15 +21,17 @@ enum Role {
 }
 
 model User {
-  id        String   @id @default(cuid())
-  email     String   @unique
-  name      String
-  password  String? // null when SSO
-  role      Role     @default(EMPLOYEE)
-  avatar    String?
-  isActive  Boolean  @default(true)
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
+  id            String    @id @default(cuid())
+  email         String    @unique
+  name          String
+  password      String? // null when SSO
+  role          Role      @default(EMPLOYEE)
+  avatar        String?
+  image         String?
+  emailVerified DateTime?
+  isActive      Boolean   @default(true)
+  createdAt     DateTime  @default(now())
+  updatedAt     DateTime  @updatedAt
 
   // Relations
   employee Employee?
@@ -49,8 +51,9 @@ model Account {
   access_token      String?
   expires_at        Int?
   token_type        String?
-  scope             String?
-  id_token          String?
+  scope                    String?
+  id_token                 String?
+  refresh_token_expires_in Int?
 
   user User @relation(fields: [userId], references: [id], onDelete: Cascade)
 
